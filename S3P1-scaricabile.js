@@ -3,9 +3,6 @@
  La funzione deve ritornare la somma di quei due valori, ma se il loro valore è lo stesso allora deve ritornare la loro somma moltiplicata per 3.
 */
 
-// DISCLAIMER: I will not check for input type errors, because I'm building the test cases, but in a real case i would test
-// for input types before making calculations
-
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function crazySum(n1,n2){

@@ -150,12 +150,47 @@ console.log(`Result of upperFirst with hello it\'s me, my name is Rob: ${us3}`)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function giveMeRandom(n){
+    let resultArray = []
+    if (Number.isInteger(n)){
+        for(let i = 1; i <= n; i++){
+            resultArray.push(Math.floor(Math.random() * n))
+        }
+        return resultArray
+    }
+    else{
+        return `${n} is not an integer number!`
+    }
+}
+
+// test case with a number
+console.log('\nTest case giveMeRandom with a number')
+let gmr = giveMeRandom(10)
+console.log(`Result of giveMeRandom with 10: ${gmr}`)
+
+
+// test case with something that's not a number
+console.log('\nTest case giveMeRandom with something that is not an integer number')
+let gmr2 = giveMeRandom(10.5)
+console.log(`Result of giveMeRandom with 10.5: ${gmr2}`)
+
 //EXTRA:
 /* ESERCIZIO 1
  Scrivi una funzione chiamata "area" che riceve due parametri (l1, l2) e calcola l'area del rettangolo associato.
 */
 
+// DISCLAIMER: for these exercise i will not test for correct input types anymore.
+
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function area(l1, l2){
+    return `The rectangle area is: ${l1*l2}`
+}
+
+// test case with 2 numbers
+console.log('\nTest case area with numbers')
+let a = area(10, 2)
+console.log(`Result of area with 10 * 2: ${a}`)
 
 /* ESERCIZIO 2
  Scrivi una funzione chiamata "crazyDiff" che calcola la differenza assoluta tra un numero fornito e 19.
@@ -164,12 +199,44 @@ console.log(`Result of upperFirst with hello it\'s me, my name is Rob: ${us3}`)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function crazyDiff(n1){
+    const N = 19
+    return Math.abs(n1 - N) > 19 ? Math.abs(n1 - N) * 3 : Math.abs(n1 - N)
+}
+
+// test case with number higher than 19
+console.log('\nTest case carzyDiff with a number higher tan 19')
+let cdResult = crazyDiff(250)
+console.log(`Result of crazyDiff with 250: ${cdResult}`)
+
+// test case with number lower than 19
+console.log('\nTest case carzyDiff with a number lower tan 19')
+let cdResult2 = crazyDiff(5)
+console.log(`Result of crazyDiff with 250: ${cdResult2}`)
+
+
 /* ESERCIZIO 3
  Scrivi una funzione chiamata "codify" che accetta una stringa come parametro.
  La funzione deve aggiungere la parola "code" all'inizio della stringa fornita e ritornare il risultato, ma se la stringa fornita comincia proprio con "code" allora deve ritornarla senza modifiche.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function codify(s){
+    const c = 'code'
+    // indexOf returns -1 if code is not present, 0 if it's the first part of the word, >0 if it's inside the word
+    return s.indexOf(c) === 0 ? s : c+s 
+}
+
+// test case with word without starting "code"
+console.log('\nTest case codify with a word without starting "code" ')
+let cResult = codify("pippo")
+console.log(`Result of codify with pippo: ${cResult}`)
+
+// test case with word with starting "code"
+console.log('\nTest case codify with a word with starting "code" ')
+let cResult2 = codify("codepaperino")
+console.log(`Result of codify with codepaperino: ${cResult2}`)
 
 /* ESERCIZIO 4
  Scrivi una funzione chiamata "check3and7" la quale accetta un numero intero positivo come parametro.
@@ -179,8 +246,42 @@ console.log(`Result of upperFirst with hello it\'s me, my name is Rob: ${us3}`)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function check3and7(n){
+    if (Number.isInteger(n) && n > 0){
+        return n % 3 === 0 || n % 7 === 0 ? true : false
+    }
+    else{
+        return 'n is not an integer greater than 0 number!'
+    }
+}
+
+// test case with multiple of 3
+console.log('\nTest case check3and7 with a multiple of 3')
+let c37Result = check3and7(15)
+console.log(`Result of check3and7 with 15: ${c37Result}`)
+
+// test case with multiple of 7
+console.log('\nTest case check3and7 with a multiple of 7')
+let c37Result2 = check3and7(49)
+console.log(`Result of check3and7 with 49: ${c37Result2}`)
+
+// test case with neither multiple of 3 or 7
+console.log('\nTest case check3and7 with a multiple of niether 7 or 3')
+let c37Result3 = check3and7(29)
+console.log(`Result of check3and7 with 29: ${c37Result3}`)
+
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "cutString", che accetta una stringa come parametro e la ritorna senza il primo e l'ultimo carattere.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function cutString(s){
+    return s.slice(1, s.length-1)
+}
+
+
+// test case with a string
+console.log('\nTest case cutString with a string')
+let csResult = cutString('ciao')
+console.log(`Result of cutString with ciao: ${csResult}`)
